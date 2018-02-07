@@ -4,39 +4,9 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        //int[] s= new int[Integer.MAX_VALUE];
-        System.out.print("012345".substring(3));
-        char[] carr= new char[]{'a','b','c','d'};
-        int [] arrk=new int[]{3,1,0,2};
-        reorder(carr,arrk);
-        for(char c:carr){
-            System.out.print(c+",");
-        }
-        System.out.println();
-        count6dights();
-        //test(2);
-        List<Integer>[] marker= new List[5];
-        for(int i=0;i<marker.length;i++){
-            marker[i]= new ArrayList<>();
-        }
-
-        marker[0].add(1);
-
-        int[] arr1= {-1,-1,5,7,-1,12,14};
-        int[] arr3= {1,6,10};
-        //sortTwoArr(arr1,arr3);
-        //int[] arr2= new int[ (int)(1.5*arr1.length)];
-        //System.arraycopy(arr1,0,arr2,0,arr1.length);
-        for(int i: arr1){
-            System.out.print(i+" ");
-        }
-
-        int[] res=new int[]{1,2,3,4,6,6,6,6,6,7,8};
-
-        System.out.println( "=====================");
-        System.out.println(binarySearch2(res,6));
-
-
+        int[] a= new int[]{100,2,3,4};
+        RandomShuffle test= new RandomShuffle(a);
+        test.shuffle();
     }
 
 
@@ -68,6 +38,34 @@ public class Main {
         System.out.println(i+" and "+(i+1));
         return nums[i];
     }
+
+
+
+    public static int bs(int[] a,int t){
+        int l=0,r=a.length-1;
+
+        while(l<r){
+            int mid=l+(r-l)/2;
+
+            if(a[mid]<t){
+                l=mid+1;
+            }else
+                r=mid;
+
+        }
+        return l;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
     ///count all 6 digits
